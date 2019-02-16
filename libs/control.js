@@ -1889,13 +1889,13 @@ control.prototype.replay = function () {
             var shop=core.status.shops[shopId];
             if (core.isset(shop) && shop.visited) { // 商店可用
                 var choices = shop.choices;
-                var topIndex = 6 - parseInt(choices.length / 2);
+                var topIndex = 7 - parseInt(choices.length / 2);
 
                 core.status.event.selection = parseInt(selections.shift());
 
                 core.events.openShop(shopId, false);
                 var shopInterval = setInterval(function () {
-                    if (!core.actions.clickShop(6, topIndex+core.status.event.selection)) {
+                    if (!core.actions.clickShop(7, topIndex+core.status.event.selection)) {
                         clearInterval(shopInterval);
                         core.stopReplay();
                         core.drawTip("录像文件出错");
